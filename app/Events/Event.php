@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events;
+namespace MiniShop\Events;
 
 abstract class Event
 {

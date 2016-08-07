@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace MiniShop\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
