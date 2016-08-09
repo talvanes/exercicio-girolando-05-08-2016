@@ -3,8 +3,9 @@
 namespace MiniShop\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Pessoa extends Auth\User
+class Pessoa extends Authenticatable
 {
     protected $table = 'Pessoas';
     protected $fillable = [

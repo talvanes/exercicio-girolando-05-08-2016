@@ -25,7 +25,7 @@ Route::resource('carrinho', 'System\CarrinhoController',
 );
 
 // para usuários autenticados
-Route::group(['middleware' => 'auth'], function(){
+Route::group(['middleware' => 'autentica'], function(){
 
 	Route::resource('dashboard', 'System\Dashboard\DashboardController', ['only' => 'index']);
 	Route::group(['prefix' => 'dashboard'], function(){
