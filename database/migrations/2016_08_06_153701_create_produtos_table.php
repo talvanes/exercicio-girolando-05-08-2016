@@ -19,7 +19,7 @@ class CreateProdutosTable extends Migration
             $table->foreign('idCategoria')->references('id')->on('Categorias');
 
             # o caminho da foto deve possuir 36 caracteres
-            $table->string('fotoProduto', 36);
+            $table->string('fotoProduto', 36)->nullable();
 
             $table->string('nomeProduto');
 

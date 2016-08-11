@@ -17,7 +17,7 @@ class Produto extends Model
     	'destaqueProduto',
     ];
 
-    public $snakeAttributes = false;
+    public static $snakeAttributes = false;
 
     /** [Categoria description] */
     public function Categoria() {

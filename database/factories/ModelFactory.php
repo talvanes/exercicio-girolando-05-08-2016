@@ -19,3 +19,35 @@ $factory->define(MiniShop\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+
+// Categoria
+$factory->define(MiniShop\Models\Categoria::class, function (Faker\Generator $faker) {
+	return [
+		'nomeCategoria' => $faker->unique()->word,
+		'idCategoriaPai' => null,
+	];
+});
+
+// Produto
+$factory->define(MiniShop\Models\Produto::class, function (Faker\Generator $faker) {
+	$categoria = factory(MiniShop\Models\Categoria::class)->create();
+	return [
+		'fotoProduto' => null,
+		'nomeProduto' => '',
+		'precoProduto' => '',
+		'estoqueProduto' => 0,
+		'destaqueProduto' => 0,
+		'idCategoria' => $categoria->id,
+	];
+});
+
+// Pessoa
+$factory->define(MiniShop\Models\Pessoa::class, function (Faker\Generator $faker) {
+	return [
+		'nomePessoa' => $faker->name,
+		'emailPessoa' => $faker->safeEmail,
+		'senhaPessoa' => bcrypt($faker->password),
+		'statusPessoa' => 1,
+	];
+});

@@ -8,6 +8,7 @@ use MiniShop\Http\Requests;
 use MiniShop\Http\Controllers\Controller;
 use MiniShop\Http\Requests\System\LoginRequest;
 use MiniShop\Services\System\LoginService;
+use Illuminate\Http\JsonResponse;
 
 class HomeController extends Controller
 {
