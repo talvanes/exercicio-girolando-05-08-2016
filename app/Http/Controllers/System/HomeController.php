@@ -23,12 +23,12 @@ class HomeController extends Controller
     }
 
 	/** 
-	 * Exibe os produtos em destaque. Acessível a visitantes (usuários não logados).
-	 * 
-	 * @return [type] [description]
-	 */
+     * Exibe os produtos em destaque. Acessível a visitantes (usuários não logados).
+     * 
+     * @return [type] [description]
+     */
     public function index() {
-        return view('content.home.index.index');
+
     }
 
     /** 
@@ -37,6 +37,17 @@ class HomeController extends Controller
      * @return [type] [description]
      */
     public function store(LoginRequest $request){
-        return $this->loginService->authenticate($request->all());
+        
     }
+
+    /**
+     * Desloga o usuário da sessão.
+     * 
+     * @param  integer $id Código do usuário
+     * @return [type]     [description]
+     */
+    public function destroy($id) {
+
+    }
+    
 }

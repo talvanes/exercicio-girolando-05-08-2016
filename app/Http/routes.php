@@ -12,8 +12,7 @@
 */
 
 // somente visitantes
-Route::resource('/', 'System\HomeController', 
-	['only' => ['index', 'store'], 'names' => ['index' => 'home.index', 'store' => 'home.store']]
+Route::resource('/', 'System\HomeController', ['only' => ['index', 'store', 'destroy'], 'names' => ['index' => 'home.index', 'store' => 'home.store', 'destroy' => 'home.destroy']]
 );
 
 Route::resource('categoria', 'System\CategoriaController', [ 'only' => 'show', 'parameters' => ['categoria' => 'id']]);

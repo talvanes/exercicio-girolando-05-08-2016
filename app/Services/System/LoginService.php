@@ -28,26 +28,5 @@ class LoginService extends ServiceAbstract{
         $this->guard = $guard;
     }
 
-    /**
-     * Serviço que faz autenticação de usuário
-     * @param  array  $data [description]
-     * @return [type]       [description]
-     */
-    public function authenticate(array $data){
-        $usuario = $this->guard->user();
-
-        // usuário está ativo
-        if ($usuario->statusPessoa){
-            // tente autenticar o usuário
-            if ($this->guard->attempt([ 'emailPessoa' => $data['emailPessoa'], 'senhaPessoa' => $data['senhaPessoa'] ])){
-                // se autenticação for sucesso, redirecionar para /dashboard (dashboard.index)
-                return redirect()->route('dashboard.index');
-            }
-        }
-        
-        // senão, redirecionar para / (home.index)
-        return back()->withInput();
-    }
-
 
 }
