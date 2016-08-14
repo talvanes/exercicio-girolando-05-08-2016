@@ -34,8 +34,8 @@ $factory->define(MiniShop\Models\Produto::class, function (Faker\Generator $fake
 	$categoria = factory(MiniShop\Models\Categoria::class)->create();
 	return [
 		'fotoProduto' => null,
-		'nomeProduto' => '',
-		'precoProduto' => '',
+		'nomeProduto' => $faker->unique()->word,
+		'precoProduto' => $faker->randomFloat(2),
 		'estoqueProduto' => 0,
 		'destaqueProduto' => 0,
 		'idCategoria' => $categoria->id,

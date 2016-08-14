@@ -28,7 +28,7 @@ class HomeController extends Controller
      * @return [type] [description]
      */
     public function index() {
-
+        return $this->loginService->login();
     }
 
     /** 
@@ -37,17 +37,17 @@ class HomeController extends Controller
      * @return [type] [description]
      */
     public function store(LoginRequest $request){
-        
+        $credentials = $request->only(['emailPessoa', 'senhaPessoa']);
+        return $this->loginService->authenticate($credentials);
     }
 
     /**
      * Desloga o usuário da sessão.
      * 
-     * @param  integer $id Código do usuário
      * @return [type]     [description]
      */
-    public function destroy($id) {
-
+    public function destroy() {
+        return $this->loginService->logout();
     }
-    
+
 }
